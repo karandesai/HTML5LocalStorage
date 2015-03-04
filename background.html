@@ -1,0 +1,7 @@
+<!--working copy -->
+chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
+    if (request.method == "firstname")
+      sendResponse({status: localStorage['key']});
+    else
+      sendResponse({});
+});

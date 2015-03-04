@@ -1,0 +1,37 @@
+//working copy
+{
+  "manifest_version": 2,
+  "name": "LocSec",
+  "description": "Best localstorage chrome extension ever! Easy accessility and management to browser localstorage data. For every web developer.",
+  "version": "1.1",
+ 
+  
+    "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+    
+  "permissions": [
+	"tabs"
+      
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+      
+  },
+  "content_scripts": [
+    {    "matches": ["http://*/*","https://*/*"],
+          "js": ["inject.js"],
+        "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+	"notification.html",
+	"notification.js",
+      "custom.js"
+  ]
+  
+}
+
+
